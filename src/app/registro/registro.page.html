@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="register-background">
+  <div class="register-container">
+    <h2>Crear una cuenta</h2>
+
+    <form (ngSubmit)="register()" class="register-form">
+      <ion-item>
+        <ion-label position="stacked">Nombre de usuario</ion-label>
+        <ion-input [(ngModel)]="username" name="username" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Correo electrónico</ion-label>
+        <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Confirmar contraseña</ion-label>
+        <ion-input [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" class="register-button">Registrarse</ion-button>
+    </form>
+
+    <!-- Botón para volver atrás -->
+    <ion-button expand="block" routerLink="/login" class="back-button" fill="outline">Volver a Iniciar Sesión</ion-button>
+  </div>
+</ion-content>
+
+<style>
+  .register-background {
+    --background: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .register-container {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .register-container h2 {
+    margin-bottom: 20px;
+    color: #00796b;
+  }
+
+  .register-form ion-item {
+    margin-bottom: 15px;
+  }
+
+  .register-button {
+    margin-top: 20px;
+    background-color: #00796b;
+    color: white;
+  }
+
+  .back-button {
+    margin-top: 20px;
+    background-color: transparent;
+    color: #00796b;
+  }
+</style>
